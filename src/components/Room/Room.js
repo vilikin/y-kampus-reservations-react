@@ -3,7 +3,7 @@ import './Room.css';
 
 export const Room = ({code, name, reservations}) => (
     <div className="room">
-        {code} | {name}
+        {code} | {name} {JSON.stringify(reservations)}
     </div>
 );
 
