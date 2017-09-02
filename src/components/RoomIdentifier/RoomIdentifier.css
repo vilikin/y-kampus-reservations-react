@@ -13,6 +13,11 @@
     border-left: 4px solid #6d922d;
 }
 
+.room-identifier > .code.reserved {
+    background-color: #FB8C00;
+    border-left: 4px solid #9c4413;
+}
+
 .room-identifier > .name {
     font-size: 2em;
 }

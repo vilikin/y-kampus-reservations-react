@@ -11,8 +11,8 @@ export const mapReservationsToRooms = (reservations) => {
         room.reservations.push({
             id: 1,
             subject: "Moi Vili",
-            startDate: "2017-09-02T09:45:00",
-            endDate: "2017-09-02T10:40:00",
+            startDate: "2017-09-02T18:00:00",
+            endDate: "2017-09-02T21:00:00",
         });
 
         room.reservations.push({

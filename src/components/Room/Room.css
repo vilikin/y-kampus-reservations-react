@@ -19,3 +19,7 @@
 .reservation {
     margin: 5px;
 }
+
+.reservation.current {
+    font-weight: bold;
+}
