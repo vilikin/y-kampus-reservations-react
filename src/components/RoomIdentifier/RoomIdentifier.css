@@ -1,0 +1,17 @@
+.room-identifier {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.room-identifier > .code {
+    background-color: #95c83d;
+    margin-right: 30px;
+    font-size: 1.5em;
+    padding: 10px;
+    border-left: 4px solid #6d922d;
+}
+
+.room-identifier > .name {
+    font-size: 2em;
+}

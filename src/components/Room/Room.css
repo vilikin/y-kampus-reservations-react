@@ -1,0 +1,9 @@
+/* #f2efe8, #95c83d, #383838*/
+
+.room {
+    color: #383838;
+    background-color: #f2efe8;
+    padding: 15px;
+    border-bottom: 5px solid #95c83d;
+    margin: 15px 0;
+}

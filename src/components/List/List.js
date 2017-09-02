@@ -25,7 +25,8 @@ export class List extends React.Component {
         return <div className="list">
             {
                 this.state.rooms.map(room => (
-                    <Room {...room}/>
+                    <Room key={room.code}
+                          {...room}/>
                 ))
             }
         </div>;
