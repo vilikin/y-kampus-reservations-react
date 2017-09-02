@@ -6,16 +6,23 @@
 }
 
 .room-identifier > .code {
-    background-color: #95c83d;
-    margin-right: 30px;
-    font-size: 1.5em;
-    padding: 10px;
-    border-left: 4px solid #6d922d;
+    color: #383838;
+    font-size: 2em;
+    font-weight: bold;
+    /*border-left: 4px solid #6d922d;*/
+}
+
+.room-identifier > .middot {
+    color: #95c83d;
+    font-size: 4em;
+    font-weight: bold;
+    margin: 0 15px;
+    /*border-left: 4px solid #6d922d;*/
 }
 
 .room-identifier > .code.reserved {
-    background-color: #FB8C00;
-    border-left: 4px solid #9c4413;
+    /*background-color: #FB8C00;
+    border-left: 4px solid #9c4413;*/
 }
 
 .room-identifier > .name {

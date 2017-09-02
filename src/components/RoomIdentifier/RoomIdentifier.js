@@ -6,6 +6,9 @@ export const RoomIdentifier = ({code, name, reserved}) => (
         <div className={reserved ? "code reserved" : "code"}>
             {code}
         </div>
+        <span className="middot">
+            &middot;
+        </span>
         <span className="name">
             {name}
         </span>
