@@ -3,6 +3,7 @@ import './List.css';
 import {fetchReservations} from "../../services/api";
 import {mapReservationsToRooms} from "../../services/utils";
 import Room from "../Room/Room";
+import moment from 'moment';
 
 export class List extends React.Component {
     constructor(props) {
@@ -22,7 +23,10 @@ export class List extends React.Component {
     }
 
     render() {
+        const today = moment();
+
         return <div className="list">
+            <div className="y-kampus">{today.format("DD.MM.YYYY")} Y-Kampus tilavaraukset</div>
             {
                 this.state.rooms.map(room => (
                     <Room key={room.code}

@@ -8,6 +8,26 @@ export const mapReservationsToRooms = (reservations) => {
             return reservation.resources.some(resource => resource.code === room.code)
         });
 
+        room.reservations.push({
+            id: 1,
+            subject: "Moi Vili",
+            startDate: "2017-09-02T09:45:00",
+            endDate: "2017-09-02T10:40:00",
+        });
+
+        room.reservations.push({
+            id: 2,
+            subject: "Moi Vili2",
+            startDate: "2017-09-02T09:45:00",
+            endDate: "2017-09-02T10:40:00",
+        });
+
+        room.reservations.push({
+            id: 3,
+            subject: "Moi Vili3",
+            startDate: "2017-09-02T09:45:00",
+            endDate: "2017-09-02T10:40:00",
+        });
         return room;
     });
 };

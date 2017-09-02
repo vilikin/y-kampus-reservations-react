@@ -6,4 +6,16 @@
     padding: 15px;
     border-bottom: 5px solid #95c83d;
     margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reservations {
+    flex: 2;
+    font-size: 1.2em;
+}
+
+.reservation {
+    margin: 5px;
 }

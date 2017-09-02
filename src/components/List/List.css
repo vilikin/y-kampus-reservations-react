@@ -5,3 +5,12 @@
     height: 100%;
     margin: 0 10%;
 }
+
+.y-kampus {
+    color: #f2efe8;
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
