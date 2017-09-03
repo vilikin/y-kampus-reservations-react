@@ -3,7 +3,6 @@ import './List.css';
 import {fetchReservations} from "../../services/api";
 import {mapReservationsToRooms} from "../../services/utils";
 import Room from "../Room/Room";
-import logo from './assets/logo-y-kamp.png';
 
 export class List extends React.Component {
     constructor(props) {
@@ -28,7 +27,7 @@ export class List extends React.Component {
 
     render() {
         return <div className="list">
-            <img src={logo} alt="Y-Kampus logo" className="y-kampus"/>
+            <img src="logo-y-kamp.png" alt="Y-Kampus logo" className="y-kampus"/>
             {
                 this.state.rooms.map(room => (
                     <Room key={room.code}
