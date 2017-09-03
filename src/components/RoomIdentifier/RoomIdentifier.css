@@ -1,5 +1,5 @@
 .room-identifier {
-    flex: 2;
+    flex: 4;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -8,8 +8,7 @@
 .room-identifier > .code {
     color: #383838;
     font-size: 2em;
-    font-weight: bold;
-    /*border-left: 4px solid #6d922d;*/
+    font-family: 'Roboto', sans-serif;
 }
 
 .room-identifier > .middot {
@@ -17,12 +16,11 @@
     font-size: 4em;
     font-weight: bold;
     margin: 0 15px;
-    /*border-left: 4px solid #6d922d;*/
+    font-family: 'Roboto', sans-serif;
 }
 
-.room-identifier > .code.reserved {
-    /*background-color: #FB8C00;
-    border-left: 4px solid #9c4413;*/
+.room-identifier.reserved > .middot {
+    color: #c84b42;
 }
 
 .room-identifier > .name {

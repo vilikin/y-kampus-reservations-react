@@ -1,9 +1,10 @@
 import React from 'react';
 import './RoomIdentifier.css';
+import classNames from 'classnames';
 
 export const RoomIdentifier = ({code, name, reserved}) => (
-    <div className="room-identifier">
-        <div className={reserved ? "code reserved" : "code"}>
+    <div className={classNames("room-identifier", { reserved })}>
+        <div className="code">
             {code}
         </div>
         <span className="middot">

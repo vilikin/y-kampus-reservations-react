@@ -2,6 +2,7 @@ import React from 'react';
 import './Room.css';
 import RoomIdentifier from "../RoomIdentifier/RoomIdentifier";
 import moment from 'moment';
+import classNames from 'classnames';
 
 
 export const Room = ({code, name, reservations}) => {
@@ -18,15 +19,19 @@ export const Room = ({code, name, reservations}) => {
          return reservation;
     });
 
-    return <div className="room">
+    return <div className={classNames('room', {reserved: isReserved})}>
 
         <RoomIdentifier code={code} name={name} reserved={isReserved}/>
 
         <div className="reservations">
             {
-                reservations.map(reservation => {
-                    return <div className={reservation.current ? "reservation current" : "reservation"}
-                                key={reservation.id}>{reservation.startDate} - {reservation.endDate}&nbsp;{reservation.subject}</div>
+                reservations.map((reservation, index) => {
+                    if (index <= 3) {
+                        return <div className={classNames("reservation", {current: reservation.current})}
+                                    key={reservation.id}>
+                            {reservation.startDate}&nbsp;-&nbsp;{reservation.endDate}&nbsp;{reservation.subject}
+                        </div>;
+                    }
                 })
             }
         </div>
