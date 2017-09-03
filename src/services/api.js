@@ -2,8 +2,8 @@ import moment from "moment";
 import config from '../config';
 
 export const fetchReservations = async () => {
-    const start = moment("2017-09-04T08:00");
-    const end = moment(start).add(20, "hours");
+    const start = moment();
+    const end = moment(start).add(24, "hours");
     const rooms = config.rooms.map(room => room.code).join(",");
 
     try {

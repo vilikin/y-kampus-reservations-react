@@ -20,6 +20,10 @@ export class List extends React.Component {
         this.setState({
             rooms: mapReservationsToRooms(reservations)
         });
+
+        setTimeout(() => {
+            window.location.reload(true);
+        }, 1000 * 60 * 10)
     }
 
     render() {
