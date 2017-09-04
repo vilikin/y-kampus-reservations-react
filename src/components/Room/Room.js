@@ -4,38 +4,52 @@ import RoomIdentifier from "../RoomIdentifier/RoomIdentifier";
 import moment from 'moment';
 import classNames from 'classnames';
 
+export class Room extends React.Component {
+    constructor(props) {
+        super(props);
 
-export const Room = ({code, name, reservations}) => {
-    const now = moment();
-    let isReserved = false;
+        this.state = {
+            now: moment(),
+            isReserved: false,
+            reservations: this.props.reservations
+        };
+    }
 
-    reservations = reservations.map(reservation => {
-         reservation.current = now.isBetween(moment(reservation.startDate), moment(reservation.endDate));
-         reservation.startDate = moment(reservation.startDate).format("HH:mm");
-         reservation.endDate = moment(reservation.endDate).format("HH:mm");
+    componentWillMount() {
+        this.state.reservations = this.props.reservations.map(reservation => {
+            reservation.current = this.state.now.isBetween(moment(reservation.startDate), moment(reservation.endDate));
+            reservation.start = moment(reservation.startDate).format("HH:mm");
+            reservation.end = moment(reservation.endDate).format("HH:mm");
 
-         if (reservation.current) isReserved = true;
+            if (reservation.current) this.state.isReserved = true;
 
-         return reservation;
-    });
+            return reservation;
+        });
 
-    return <div className={classNames('room', {reserved: isReserved})}>
+        setTimeout(() => {
+            this.forceUpdate();
+        }, 1000)
+    }
 
-        <RoomIdentifier code={code} name={name} reserved={isReserved}/>
+    render() {
+        return <div className={classNames('room', {reserved: this.state.isReserved})}>
 
-        <div className="reservations">
-            {
-                reservations.map((reservation, index) => {
-                    if (index < 3) {
-                        return <div className={classNames("reservation", {current: reservation.current})}
-                                    key={reservation.id}>
-                            {reservation.startDate}&nbsp;-&nbsp;{reservation.endDate}&nbsp;{reservation.subject}
-                        </div>;
-                    }
-                })
-            }
+            <RoomIdentifier code={this.props.code} name={this.props.name} reserved={this.state.isReserved}/>
+
+            <div className="reservations">
+                {
+                    this.props.reservations.map((reservation, index) => {
+                        if (index < 3 && this.state.now.isSameOrBefore(moment(reservation.endDate))) {
+                            return <div className={classNames("reservation", {current: reservation.current})}
+                                        key={reservation.id}>
+                                {reservation.start}&nbsp;-&nbsp;{reservation.end}&nbsp;{reservation.subject}
+                            </div>;
+                        }
+                    })
+                }
+            </div>
         </div>
-    </div>
-};
+    }
+}
 
 export default Room;
