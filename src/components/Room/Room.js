@@ -26,7 +26,7 @@ export const Room = ({code, name, reservations}) => {
         <div className="reservations">
             {
                 reservations.map((reservation, index) => {
-                    if (index <= 3) {
+                    if (index < 3) {
                         return <div className={classNames("reservation", {current: reservation.current})}
                                     key={reservation.id}>
                             {reservation.startDate}&nbsp;-&nbsp;{reservation.endDate}&nbsp;{reservation.subject}

@@ -18,23 +18,21 @@
 }
 
 .reservations {
-    flex: 3;
-    font-size: 1.2em;
+    flex: 1;
     min-width: 0;
 }
 
 .reservation {
     margin: 5px;
+    font-size: 1.1em;
     color: #515151;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.2em;
     font-family: 'Roboto', sans-serif;
 }
 
 .reservation.current {
     font-weight: 900;
-    font-size: 1.2em;
     color: inherit;
 }

@@ -1,5 +1,5 @@
 export default {
-    apiUrl: "http://koti.tamk.fi/~c4vkinnu/ykampus/query.php",
+    apiUrl: "http://ykampus-reservations.projects.tamk.fi/query.php",
 
     rooms: [
         {code: "C1-18", name: "Neuvottelutila"},
